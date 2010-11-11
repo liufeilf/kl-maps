@@ -32,7 +32,7 @@
         }
       };
 
-    $("#map").klmap(options);
+    $("#map").klmaps(options);
   
   };
        	

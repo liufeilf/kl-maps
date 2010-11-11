@@ -3,7 +3,7 @@
 */
 
 (function($) {
-  module("kl map");
+  module("kl maps");
   
   test("create maps and highlight the center", function() {
 	  expect(2);
@@ -16,14 +16,14 @@
         };
         
     var map = $("#map");
-    var klmap = map.data("klmap");
+    var klmaps = map.data("klmaps");
         
-    ok(typeof klmap == "undefined", "the map is not created.");    
-    klmap = map.klmap(options).data("klmap");
-    ok(klmap.getMap(), "the map is set.");
+    ok(typeof klmaps == "undefined", "the map is not created.");    
+    klmaps = map.klmaps(options).data("klmaps");
+    ok(klmaps.getMap(), "the map is set.");
 
     // clean up
-    map.removeData("klmap");
+    map.removeData("klmaps");
     map.html('');
 
   });
@@ -40,11 +40,11 @@
       };
     
     var map = $("#map");
-    var klmap = map.klmap(options).data("klmap");
-    equals(klmap.getMarkers().length, 2, "the markers should be ready.");
+    var klmaps = map.klmaps(options).data("klmaps");
+    equals(klmaps.getMarkers().length, 2, "the markers should be ready.");
 
     // clean up
-    map.removeData("klmap");
+    map.removeData("klmaps");
     map.html('');
     
   });
@@ -61,11 +61,11 @@
       };
     
     var map = $("#map");
-    var klmap = map.klmap(options).data("klmap");
-    equals(klmap.getMarkers().length, 2, "the markers should be ready.");
+    var klmaps = map.klmaps(options).data("klmaps");
+    equals(klmaps.getMarkers().length, 2, "the markers should be ready.");
 
     // clean up
-    map.removeData("klmap");
+    map.removeData("klmaps");
     map.html('');
     
   });
@@ -96,16 +96,16 @@
       };
     
     var map = $("#map");
-    var klmap = map.klmap(options).data("klmap");
+    var klmaps = map.klmaps(options).data("klmaps");
     
     equals($("#_iwid").length, 0, "info window should not show before trigger.");
 
     // trigger mark event
-    google.maps.event.trigger(klmap.getMarkers()[0], "click");
+    google.maps.event.trigger(klmaps.getMarkers()[0], "click");
 
     stop();
     // clean up
-    map.removeData("klmap");
+    map.removeData("klmaps");
     map.html('');
     
   });
